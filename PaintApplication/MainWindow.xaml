@@ -1,0 +1,40 @@
+﻿<Window x:Class="PaintApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaintApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        
+        </Grid.ColumnDefinitions>
+        <Canvas Grid.Column="1" Name="paintCanvas" Margin="0" Background="White" MouseMove="paintCanvas_MouseMove"
+           MouseLeftButtonDown="paintCanvas_MouseLeftButtonDown" MouseLeftButtonUp="paintCanvas_MouseLeftButtonUp"
+            MouseRightButtonDown="paintCanvas_MouseRightButtonDown" MouseRightButtonUp="paintCanvas_MouseRightButtonUp" >
+        </Canvas>
+
+        <StackPanel Margin="3">
+            <GroupBox Header="Color" Margin="3" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="3">
+                    <RadioButton Name="redRadioButton" Margin="3" Checked="redRadioButton_Checked">Red</RadioButton>
+                    <RadioButton Name="blueRadioButton" Margin="3" Checked="blueRadioButton_Checked">Blue</RadioButton>
+                    <RadioButton Name="greenRadioButton" Margin="3" Checked="greenRadioButton_Checked">Green</RadioButton>
+                    <RadioButton Name="blackRadioButton" Margin="3" Checked="blackRadioButton_Checked">Black</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Size" Margin="3">
+                <StackPanel Margin="3">
+                    <RadioButton Name="smallRadioButton" Margin="3" Checked="smallRadioButton_Checked">small</RadioButton>
+                    <RadioButton Name="MediumRadioButton" Margin="3" Checked="MediumRadioButton_Checked">Medium</RadioButton>
+                    <RadioButton Name="largelRadioButton" Margin="3" Checked="largelRadioButton_Checked">Large</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            <Button Name="undoButton" Width="75" Margin="3,10,3,3" Height="23" Click="undoButton_Click">Undo</Button>
+            <Button Name="ClearButton" Width="75" Margin="3,10,3,3" Height="23" Click="clearButton_Click">Clear</Button>
+        </StackPanel>
+    </Grid>
+</Window>
